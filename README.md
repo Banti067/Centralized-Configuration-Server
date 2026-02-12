@@ -126,13 +126,17 @@ Configuration naming pattern:
 
 ### Dependency
 
-```xml
+```
+xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-config-server</artifactId>
 </dependency>
+```
+<br>
 
-Main Application Class
+## Main Application Class
+```
 @SpringBootApplication
 @EnableConfigServer
 public class ConfigServerApplication {
@@ -141,8 +145,11 @@ public class ConfigServerApplication {
         SpringApplication.run(ConfigServerApplication.class, args);
     }
 }
+```
+<br>
 
-application.yml (Config Server)
+ ## application.yml (Config Server)
+ ```
 server:
   port: 8888
 
@@ -157,17 +164,21 @@ spring:
           uri: https://github.com/your-org/config-repo
           default-label: main
           clone-on-start: true
-
+```
 <br>
 
-Config Client (Microservice) Setup
+## Config Client (Microservice) Setup
+
 Dependency
+```
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-config</artifactId>
 </dependency>
+```
 
-bootstrap.yml (Client)
+## bootstrap.yml (Client)
+```
 spring:
   application:
     name: user-service
@@ -177,7 +188,7 @@ spring:
       uri: http://localhost:8888
       profile: dev
 
-
+```
 <b>Note:</b> <code>bootstrap.yml</code> loads before <code>application.yml</code>, ensuring configuration is available at startup.
 
 <br>
@@ -195,8 +206,9 @@ user-service-dev.yml
 
 <br>
 
-Runtime Configuration Refresh (Optional)
+## Runtime Configuration Refresh (Optional)
 Actuator Dependency
+```
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
@@ -208,8 +220,8 @@ management:
     web:
       exposure:
         include: refresh
-
-Trigger Refresh
+```
+## Trigger Refresh
 POST http://localhost:8080/actuator/refresh
 
 <br>
