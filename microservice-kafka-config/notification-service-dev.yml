@@ -27,6 +27,7 @@ spring:
 
       properties:
         spring.json.trusted.packages: "*"
+        spring.json.add.type.headers: false
 
 server:
   port: 8083
