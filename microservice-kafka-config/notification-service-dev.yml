@@ -25,6 +25,8 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
+server:
+  port: 0   # 🔑 REQUIRED for multiple instances
 
 eureka:
   client:
