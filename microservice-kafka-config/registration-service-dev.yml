@@ -17,6 +17,10 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
 
+    # 🔑 REQUIRED FOR TOPIC + PARTITION CREATION FROM CODE
+    admin:
+      auto-create: true
+
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
