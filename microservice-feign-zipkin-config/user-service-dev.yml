@@ -3,7 +3,7 @@ spring:
     name: user-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/demo_feign_data   # changed from mysql → localhost
+    url: jdbc:mysql://localhost:3306/demo_feign_data
     username: root
     password: Banti@321
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,7 +20,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-container:8761/eureka   # changed from eurekaservice
+      defaultZone: http://eureka-container:8761/eureka
     register-with-eureka: true
     fetch-registry: true
   instance:
