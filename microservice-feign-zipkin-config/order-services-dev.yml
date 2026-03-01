@@ -3,7 +3,7 @@ spring:
     name: order-services
 
   datasource:
-    url: jdbc:mysql://localhost:3306/demo_feign_data   # changed from mysql → localhost
+    url: jdbc:mysql://localhost:3306/demo_feign_data
     username: root
     password: Banti@321
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,18 +20,23 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka   # changed from eurekaservice
+      defaultZone: http://localhost:8761/eureka
     register-with-eureka: true
     fetch-registry: true
   instance:
     prefer-ip-address: true
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: env,health,info
+
   tracing:
     sampling:
       probability: 1.0   # dev only (reduce in prod)
     export:
-      enabled: true      # ✅ THIS enables tracing in Boot 4
+      enabled: true      # ✅ REQUIRED for Boot 4
 
   zipkin:
     tracing:
