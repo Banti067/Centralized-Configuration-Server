@@ -37,6 +37,7 @@ management:
       probability: 1.0   # dev only (reduce in prod)
     export:
       enabled: true      # ✅ REQUIRED for Boot 4
+    trace-id128: false
 
   zipkin:
     tracing:
