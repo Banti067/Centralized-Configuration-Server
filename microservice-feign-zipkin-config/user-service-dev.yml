@@ -34,6 +34,8 @@ management:
 
   tracing:
     trace-id128: false
+    propagation:
+      type: w3c
     sampling:
       probability: 1.0   # dev only (reduce in prod)
     export:
