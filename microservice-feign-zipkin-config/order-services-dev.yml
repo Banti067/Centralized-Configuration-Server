@@ -34,12 +34,12 @@ management:
 
   tracing:
     trace-id128: false
-    propagation:
-      type: w3c
     sampling:
       probability: 1.0   # dev only (reduce in prod)
     export:
       enabled: true      # ✅ REQUIRED for Boot 4
+    propagation:
+      type: b3
 
   zipkin:
     tracing:
