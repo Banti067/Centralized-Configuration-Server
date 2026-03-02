@@ -30,7 +30,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: env,health,info
+        include:  health,info,metrics,conditions,env
 
   # 🔥 THIS SECTION WAS MISSING / INCOMPLETE
   observations:
