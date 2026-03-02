@@ -32,14 +32,18 @@ management:
       exposure:
         include: env,health,info
 
+  # 🔥 THIS SECTION WAS MISSING / INCOMPLETE
+  observations:
+    web:
+      server:
+        enabled: true   # ✅ REQUIRED → creates trace for incoming HTTP requests
+
   tracing:
-    trace-id128: false
+    enabled: true      # ✅ EXPLICIT (best practice in Boot 4)
     sampling:
-      probability: 1.0   # dev only (reduce in prod)
-    export:
-      enabled: true      # ✅ REQUIRED for Boot 4
+      probability: 1.0 # dev only
     propagation:
-      type: b3
+      type: b3         # matches Zipkin & your manual Feign headers
 
   zipkin:
     tracing:
