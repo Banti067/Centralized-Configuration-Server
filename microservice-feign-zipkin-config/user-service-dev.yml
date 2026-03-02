@@ -45,6 +45,6 @@ management:
     propagation:
       type: b3         # matches Zipkin & your manual Feign headers
 
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+    export:
+      zipkin:
+        endpoint: http://localhost:9411/api/v2/spans
