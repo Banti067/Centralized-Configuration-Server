@@ -18,7 +18,7 @@ spring:
 
         # USER SERVICE ROUTE
         - id: user-service
-          uri: lb://user-service
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/user/**
           filters:
@@ -26,7 +26,7 @@ spring:
 
         # ORDER SERVICE ROUTE
         - id: order-service
-          uri: lb://order-service
+          uri: lb://ORDER-SERVICES
           predicates:
             - Path=/api/v1/order/**
           filters:
