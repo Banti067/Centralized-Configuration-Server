@@ -22,7 +22,7 @@ spring:
           predicates:
             - Path=/api/v1/user/**
           filters:
-            - StripPrefix=0
+            - StripPrefix=2
 
         # ORDER SERVICE ROUTE
         - id: order-services
@@ -30,7 +30,7 @@ spring:
           predicates:
             - Path=/api/v1/order/**
           filters:
-            - StripPrefix=0
+            - StripPrefix=2
             - name: RequestRateLimiter
               args:
                 redis-rate-limiter.replenishRate: 5
