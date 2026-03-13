@@ -1,4 +1,4 @@
-
+```yaml
 spring:
   application:
     name: api-gateways
@@ -57,6 +57,4 @@ management:
   endpoint:
     gateway:
       enabled: true
-
-
-
+```
