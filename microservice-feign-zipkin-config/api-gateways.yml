@@ -16,7 +16,6 @@ spring:
           lower-case-service-id: true
 
       routes:
-
         # USER SERVICE ROUTE
         - id: user-service
           uri: lb://USER-SERVICE
@@ -57,4 +56,3 @@ management:
   endpoint:
     gateway:
       enabled: true
-
