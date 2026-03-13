@@ -22,16 +22,16 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/api/v1/user/**
-          # filters:
-          #   - StripPrefix=2
+          filters:
+            - StripPrefix=2
 
         # ORDER SERVICE ROUTE
         - id: order-services
           uri: lb://ORDER-SERVICES
           predicates:
             - Path=/api/v1/order/**
-          # filters:
-          #   - StripPrefix=2
+          filters:
+            - StripPrefix=2
           #   - name: RequestRateLimiter
           #     args:
           #       redis-rate-limiter.replenishRate: 5
