@@ -1,8 +1,8 @@
-
 spring:
   application:
     name: api-gateways
 
+  # Redis configuration (enable when using RateLimiter)
   # data:
   #   redis:
   #     host: localhost
